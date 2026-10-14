@@ -1,0 +1,982 @@
+[
+  {
+    "inputs": {
+      "username": "student",
+      "password": "demo-password",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}404b4ac8a301c40d680addfe36556f6f",
+      "info": "{SRBX1}wXzVXidJxyWtWQFMOdirqlExCr+S1ouxb0qLbF2241e+AoVO/XbWZY8AhbwtKKbBfI/5L6J4nrlbtm+K4pyJwiraShxanmNp2aXh5uD9QC+YMgERY/vn6joalUZlgnsD91gzfQijQ2L=",
+      "chksum": "7d2f212e46c085de815d1b689a256d2898f064c8"
+    }
+  },
+  {
+    "inputs": {
+      "username": "user@example.invalid",
+      "password": "quote\"slash\\line\n",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}b8f37d62c2e57eced1429c6b51981b00",
+      "info": "{SRBX1}NNFlAQ8XxowNq5WNAVCMrzcT4yJB0CcTKz7O7nxjAa/IIHiPZdelbT/DiBW/fCKtjy0tGFg8z8BIyB9inj1y0veeFP7fghWHXOfiI9JB/jhbzKiL5vvhZOATqf3627AcD6b8LGAMz+jAM5oJIzpMG1wA/AIBk6/Dqdm/ev==",
+      "chksum": "36fa0be6e3e94060228d9c9c615364d9ded28f19"
+    }
+  },
+  {
+    "inputs": {
+      "username": "测试用户",
+      "password": "密码🌐é",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}a0941ae94259163096d990b007353d10",
+      "info": "{SRBX1}CVQn7QAN3qT/BpfLz1XBuCSQ9MquANssDhS106wwkkE2oScpyemVL+JdPQnSpykKT3UwBn3rPpABFFmyGU15FlT+xLrx3cwfTlIylBrD48SsfR0AX4CZmPdtK1LSzF1O",
+      "chksum": "4951ff3a417a95b8e2c1d3018797315160b862d9"
+    }
+  },
+  {
+    "inputs": {
+      "username": "student🌐",
+      "password": "p  ",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}af6dfc3dde0d01710ce67c60e59be555",
+      "info": "{SRBX1}YH2Goqc65iaxm9b8HnUCccjDze43p7Yx8FOA9GK3xj5aYYoWqcamSp8FU086qDsEPE9593Gv5bSWEZAsyj3JwKAMKlw42/zuWNoFAvBM3JHxfK9goDler9WF1yrR+AwM",
+      "chksum": "13b6bfcf3e95c1c28214e593f695d41b9f7f11bf"
+    }
+  },
+  {
+    "inputs": {
+      "username": "user",
+      "password": "",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}12b7df856574be74a29fa124bd70e85d",
+      "info": "{SRBX1}E7owFJS3yX7X3otMJf6k4aknlyeOdww3tYL+1IdRzlKr5arO6laSlKyLjgeBI0okHruuyB++bEcKSrW5LvgocI5WyHS/paY3IGV5mbUrtSDkqyoa++r+dv==",
+      "chksum": "177d6311f18144db21d5d1d8bc221efa3f5a776c"
+    }
+  },
+  {
+    "inputs": {
+      "username": "ux",
+      "password": "p",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}dc9beab66b725e49fa95a3b52f892426",
+      "info": "{SRBX1}zJ9dQ87fwnSm+5NKPrWKr1rAOeVPDO02p6aPSta6CN7I6hbtSMuo0YJGh+btgPM4GGqfeVNX7itmxWYrC14khVSGoo7IF1BF2af3T97aPrlLLy2sZ4+lgL==",
+      "chksum": "17d0de63207872b74b60a7ecf5f336e7f5eed387"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxx",
+      "password": "pp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}c49667abcdf0f0525c1dd0ce3778b57e",
+      "info": "{SRBX1}J95W0Yi85d+baVv+A78FdFl44QwvSDgI/PHb8HFR8jthXliBHuWMYs7wkbfs2jUKX49t/+Largr4SfA2KEYmjSRkmKN3DiQ5kyTLS3etdJzeYsXKc8CTayFqt8Z=",
+      "chksum": "fc97953faa6bb616e3d50893e2787ea6f009de60"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxx",
+      "password": "ppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}7173ee007ad51186a24f05bccae825a5",
+      "info": "{SRBX1}q3tTl+651FHqJ/431lZCvjIfxqg4IYeZyupt7zEaSJ8d6/dDkbrXIdz8KKHmK6r+9ioshd//tyNxxmEGNLFwAU9++Wl4KvIjN8PNMo8OJujQPsSwkx/wLL6UwAD=",
+      "chksum": "6c96d893e94c3967ba11a072b9d252ea9fd1d60e"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxx",
+      "password": "pppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}9a703d62d1fd98b9c519992d60bb0d46",
+      "info": "{SRBX1}SHb2rOG3ab9JbePMLszVkgTH0LIQOhTNfp7AHtlQc6hcsZoyqnursbR2BROAi41DR6E+h1QZW9wqyaa4Dfo3bjxqxl5rvO1v0rC7PURe4cVZD7Ggbu337YinQB5IvyZs",
+      "chksum": "ca1a1c89cc9e896499bf6608abefdade2639b749"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxx",
+      "password": "ppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}7ad61eacb31c4554ec6210c0cc5679eb",
+      "info": "{SRBX1}XuQvcSLmJPb/spCqQPCB+FDdCy6Y3kz9XvP6wIYKWe9wPBuXpE5B6cGFjslM4Iuepw77DoLPfnJpSR85ErUVF08RGGcZfnAvfeg2DynipgoT998rCEkYXPMbImUcdJ8y",
+      "chksum": "e749733a72692732395d03f2d7fa75cef258b2e1"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxx",
+      "password": "pppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}a20d6f2b4dc38c106cfeb457fc577b5d",
+      "info": "{SRBX1}bWFO5PhVNwJ3mkD1atduiy+k7SlW934Ibi6loMfbiGlwXrdBkUHG6YpYBUW0ytTsB52Imb/I1AT2hieyiXlssS6osN3k8WnIE4j0aHCE7fg+l8YNth5taSVk8PKn8kidDCYCcv==",
+      "chksum": "b673edc134850e70709d54cda2ab12f968d004dc"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxx",
+      "password": "ppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}5a251260f59607b342452e5155da541a",
+      "info": "{SRBX1}4c8o02O8vAnWbiguriNDImMZ5SGzvI+uRqYJbpIjASqFqwj85OXPEA2NL7SXsR1bNuFdSYIFGEjOhWD5bKGI/NMAB6HNDFIQOWj59zaT+cYK/BytOlsukkKUB6OoQoOq5NgfBL==",
+      "chksum": "910342376029a8f5f7cbf9e4310a5e8f52022e3c"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxx",
+      "password": "pppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}3df8b35db24c0fe72b85f0aad76b9252",
+      "info": "{SRBX1}nXtH1cU0d3KTg2J3tnd9KgZD9CPkStVbjmFXYLZhad0JhALR47TFKfWYMrEp0Dg/Mj16wDV4p45jB2Ssc4qp2F3harmV4PiFzcxdRYen9FQaUphKVPRoF14XC48lazaz1Iqb/d5jaG+=",
+      "chksum": "adf07ae68e2f50dea5abfcdd926e75ca93655716"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxx",
+      "password": "ppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}7cfbb70a5e5f4dfa5a17eca8799fe8e3",
+      "info": "{SRBX1}3hhUXiDY/Tt2o0LSSwYVEQfwKz3nn+mSq/ULMRqi4CAkrTD6GIQbrBd+PyImz2J8JrThwie4LNvocUpnonA5XF7C29Aj9bYFb3a8zwEbI3fntyfIE1y105AJ/5+7C6eT7jOJY1SJo92=",
+      "chksum": "93eb6cf8e05d310a6cfd155091903c9b8f66a900"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxx",
+      "password": "pppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}fb9077dec6bf7189ef99eeb70991f63d",
+      "info": "{SRBX1}5ZRNs/Hqfpxyy4HI7rbj+SbXKFsVxMLsYSPtzD6/OSkMVManVJu02OvsNRQFLNEuFHl4JH4GhAFevF2brbcdAiD4D0esBoOv57FRzdpH+X9YDkEneXrhIjgujeUiOvocL+QbT0JdVTEgI9H0",
+      "chksum": "04a2a9f321a091c7510a7e00a0e3deac6e56559c"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxx",
+      "password": "ppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}5740a8553f63eae9c6aa0c9eb0e3f8eb",
+      "info": "{SRBX1}FWCimbJyhlSSmtN26+5I5RYFxrRvLkSxM7xJ4hj7x1FA6w6mlfC9KfpWQN/uOLBMz8BVHWF84TCfQhTILJFkTZR2yIKAaVTkRjxtH6ciHAk3im7gmD4U51EsyNUno2yKw+IXWabiTh5B/q5l",
+      "chksum": "5ad4dceb6f3cecf14a83a028d670016e278eec47"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxx",
+      "password": "pppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}0d880f8114b312bdac171f7c44de3239",
+      "info": "{SRBX1}J+0FoczTUxigCyoIJYrkyZ9jS5eLtMPRc1oZqf3voe/3gGUKGWplzdq1Mdvrc3eXhWTJogZEuHb+3xrKZu7RfJr/dP6LzwImGCKqOaEEHSkmPKqbUc8CdYToWGagI13dFt8w3+JFcDOENm6bEDOikS==",
+      "chksum": "d4e886ecfe2019e5767114e7cab16769e4cba68c"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxx",
+      "password": "ppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}f2e4c8601f3b4b017f47975db338cbe5",
+      "info": "{SRBX1}C8S0OCqwUgDSvjjIOTK/riRFhpS40PHDjAZdwXVofFadqOkikOhlbPWbF+g/0Xrn+nVmAjtqJqLRXDpeldVSbItZdO4KtPlFbI/Mx8miX2cQHEaqd/3RY51avrvLyJO141wKMXSF9T1/YSlz0oUT+S==",
+      "chksum": "3881eac72c3c6ed3879aafd4b28028802281928d"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxx",
+      "password": "pppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}ac81b6771416c56380edd9af8e2082ee",
+      "info": "{SRBX1}4aINWnegsuYZp4wwUif8/qSwPy/+QJxMFJR2x/xmag2sWo+MoX4EFZlWVSRYc8kCtnafqgqZm5rre6V2qKaWKUWzmb9e/jHZcr6Gm4VRWIiYNhf5o+QCbUmPaCEPA7aQlawr4bW0WWTR7p5m0JWtUMF/+iP=",
+      "chksum": "aefa026a31fa6371f29b0928c79c00c12f47eba1"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}2fddd45fd3e66bc2cf1561999b31f5d0",
+      "info": "{SRBX1}rMWT93rIMnI8xVi2JuAmM8FjdZS55S9dK8xXuKQvPoPMKWHL6FfpGndVQVhpoVUZg7AhF8k6B+m98FYe4wDUFNrBDru2IKDxbfxStez1X7aas0i21Omjl6qmRp++KwUtHKMerQ1p6r9S8wE+FPmOptHynU9=",
+      "chksum": "23bb3a32b3422c7d2c811e00ad400a3121a77eef"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}d0e4681599da713272326a070bb33bee",
+      "info": "{SRBX1}XNrxw25K4EMJJSqPNGE/o0og6GN5h/oRH2lOT0OMqiV7uDfWJxl5cBZeIgV7a80dbkQL5sjFIz0Q5MDPtfrbdd5B7g14pQuNDswokNpdZ8qa3hCiqS86VyrRBKsQuQIiPTGm9FUqsKsX6SJOSxFIlxPxU7+78Gsv",
+      "chksum": "928511cd37419adc67fcfa32da61550232e96a42"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}8f4f389ad2532b768833ff596476b26c",
+      "info": "{SRBX1}LBXM6KQEgU453KYJwg1vAlY/PwDfSSoRkwx8cFK5eXlkw98DbUafjlCcBduV3YEc1V2S0esVbfzGk1wvaqCaiwx4oyNvVXblIDBFACPWr437xr0LawmskMXS/qfo/zBeA4nD/W2ipxx8eNLMXuSN8vG7s4waZ4+y",
+      "chksum": "b93f573866cd6a1bd1cbcb54a2021aa2bd6a3b71"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}c2dd212156128fb10f5daa4b32ca078e",
+      "info": "{SRBX1}F8LY/NRZir6ZuhAIVoCHxfhq1AZwK3gzl3mP/HEph4e61HNlFI1hj+gVoIoX8+k7Lb4YBMwFh3o4bCBz4RIOkzVnAkvfSDn4M79jfuXOdh8wB6t39KFra1bs6b8lK6twjGsmMvnu1ghIIEfn+7SdHC0O2zIqQuTo2QSAYv==",
+      "chksum": "d159bca784ba48fa38b5e9ddb8e04541ce8e163f"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}5e14ddc4af99bd50d42ef3d35ff2d30d",
+      "info": "{SRBX1}ZYExt3JDeEHVjQF3r1nEhQcAFzTU0gq3URQAvIuQxHK0Y+XqHsnk5IQQ09wjAeOjgq8fSd7nDKDvL6UWkKEXoiC6cfZFktoKT1Tvn3c5jVBGClxg24UV15RZFxWiYh9WH9naDSdjWphEv0u4LVF0dLsjEZJcYzrGHUZkh+==",
+      "chksum": "8aaf7afe067a705a40a60e2acd0e27ebb2a8668f"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}121952fadb2a045484a502e4e437b3e9",
+      "info": "{SRBX1}+KUj9ho8e4Mu1qBIUTMf9vJ7zkNYJOAmpd/ckyviBbwajZ4zeR8aW+nfo5owCG53quxiDwEdY+Itj+96J73Jefc5mEJlzfOlXBgBLXFXdraztxBV/+WZj8/GvEaWuuH09NgxlhUmeLiw/dqhT1wg0dSeb+FRrHM2hd+99J9L31M=",
+      "chksum": "e836f968e6b5e19eae86cdd8b53d551c763f6542"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}045868d2cd5d9071495e7a96908409cd",
+      "info": "{SRBX1}MjwceWVuoMZklX/MV0zogeGC6m/wSRAFWZxoyD5HnDp4gtla3o8XIozDX5DRlgxkKkE8R6CA9yecX8Acvllyjsxk2K2+WYA+4IWF/XF3fpaLqF8+ORgKCTAtRAIy+ICUt4UF0/dkZCuIAviELosvmjOAs2/LDTY+xR8Ehfft43H=",
+      "chksum": "5428673e85a1d1b014847e71e617ae513036b7d3"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}fb882539ef8ba7141a187db71a4dd368",
+      "info": "{SRBX1}NDx6rdj1K/m/7XqUIGaA1TwZJXmHVY806pfzDgOcscM76T57Ej14/QHQH3Y+0M5rH+OnpuurheSoeNn6Oj305uo6P6W6NtewQ49rzDYbq6FwZbZOszyYHJZNN+pk85v5pOsN5kGm/mr1RwT8sRealNGx+ean6JrnU+9KI8pn0Hc/Cmew",
+      "chksum": "f33c21320b2357ae66a0124e1420459cc9568f30"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}d6a8e1a519ac8a45082ffb3e807ec7f8",
+      "info": "{SRBX1}6n6BvECKTS28JSSs5u+t+OcrOnULql2rYG2Qx5kwT9ZC6GrOUGJjz7GStLfAjYkKcEyIZ+a/G/UnEfe84uOQoOeiefQR66O6onn6rdW7ocArDmp1Du/zvYZxuH6UZt2t8D7sXclBgtCocg9VsXLy8IZ4EJIjDvllJkjCTUtWbpLbz6xi",
+      "chksum": "ace0462209bde3dd582a059168807b5f44750214"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}0c2335d75c78f0f022feb2be8650983d",
+      "info": "{SRBX1}9duZILoY1kay5r2QcjBmDy+dugvcOMF0GyDtaQGzLU0cRK+HzBRTGgPuLVjNkllt/jiFzWcor2Z4LS19Q0HYqbadqSg2PKq6xETrKXON8QjRF9kEQVib/KXpdQNvFo2xVS25NXRmhf9Au/ejcYr/XE5+LOsY2mGPMvWLOPsBjXw6jQ5UVP1kgL==",
+      "chksum": "c8f03a2c0502e08e7e20b1d8ad16bc7e6a684bdf"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}6ea71fa4dfc71e29320bfae73c1826c6",
+      "info": "{SRBX1}Ntvp4x7j5R8PR/da5QeRbpnY5rkVrgvumhMRbPk2+QhuzW0KKE0ODG1as8hUzxxH8gPWGakbmNyMTmLj24kV4c29Z5qNrCnmJnXHSWdWYqg1rLC5KpBNPs84ZbPFmQGKszP4WhV4qtZ3Ga8LKnrNecmLX6yvIjpFo3Z7gPRWuo+Y0VEKuVHqYv==",
+      "chksum": "0420d3d27a9ac98ec7466d1b0477120c2b8e669d"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}a460fa4638250da2b5c69a895ed11154",
+      "info": "{SRBX1}KoPT/1QPJymEkJLstpojNNALlz4HZVoNnWdZkhQR4RhBr3MU7Yj9nJ7zLkbFvj9OWWGjIiu/Z+gGNQTUTSOyrXnC/xou6BkL3UgHLwQ5kmH5YD9R/dsnNDzCdbv6l+05Buqa2kGrDY23QdvkS9UQFzZlGg1l1u9MPKMSedoAM/xwl/middC48o4PzA9=",
+      "chksum": "374d9b4d2954c9b055555713d432359b937acd9b"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}6e6669ee6559b23eaf5b77fed9ef32e3",
+      "info": "{SRBX1}sv06aSd8TZD6eFGv8sOrb7do9IIL21H1YQjoN+9qsSs1cWFRdLKIogwjtjipkAcyA81K1Fc/zjRG4+9BIsbKSZxVr8C/6sEd69NVzY4tlBsn4JUSSEoH21LJXu3YZbo0nT4ny/pOg0L6Px1MmXw3hxLaQtcFM0WcDc6WP51+ziNjtaNOfppYxhASEND=",
+      "chksum": "e88f8268cd4a63d2cc848372a8121cc31e80200b"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}61814b91897a810c27b76e108df47525",
+      "info": "{SRBX1}rjkPWgkt4VBsb3cQeF5/NB9nuBNsjzgYJTsTvYqwPgeY3DYLA98E9wn/z8Xeqa07lvfQzM7ySkCYvw8+pj2pv6VWcF64EKl8C40TN38GgNdlpIjzwdDCDP6Efw4KoozjL6/+aXLFwyKP/1qQ8m3VUfs+MdvIp5o9qj1uJqiK3INgq7PS9bq1Gghh0J4tynZF",
+      "chksum": "4bf155f389486ea0533ba3633841501c95458bfa"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}63a74d2d38bcaf9f92de3e58c24d2b7d",
+      "info": "{SRBX1}VGuK1bg57JcAvlm2/ckP51xoK0lvj0+/LWhRFpFQQnQN6+yvpZtBWn4QTsQfgSstNRStxqDYctLWdr+l3OL/FGut0zEkfWOtwhzrN0hx9dej7g4VqZtZP+/tj2zEv23B+VpF8KnfcSyCUElruhnUf2B3D1SosoNwQ40RcLRfezaNWrPXgtyne+xQDC7ddlzp",
+      "chksum": "4191b50ae9ee5f43b42aaab9e35c48aeacb57b02"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}a1311b673641e5e12f7957884923b62d",
+      "info": "{SRBX1}icjjAL+VmoOTyAA4sVTgb2Q7v+5C3Q6et3HwMQxS6lQYjl4TDAYWI4OuJSGAtDY3+I0CeRrUnOlXgoxpBp7CZ/ppa1lRJ8WhxehDP00+0MnQ4qNwpbPbY9i+FuEeYacdzPqDpeWR55CoNE/zfRkilfC7o4rOAiUzWvBD+E/5zF6w5+gtsaLsW8l1LlE8dv9k0b4H8+==",
+      "chksum": "3897f6cf73161b377f9840394e70ecc6ba1c4d92"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}68bc561dae32c45a7be61f8db2705419",
+      "info": "{SRBX1}b0iysfYMfgcbNSfnI5BwONCCvZzIuDbiSwVmZb1N4PDEnQDM17Z8R2Q6vbZWzuCgaHZiCR/K9gRsUUwUOfiUWCVulrrwO4/aLjRhL+LZYG6vTf4IKzYd1x/BnCgeHvQLCW7dNK7ZJ0fTEo2Cn08bnw8In9ksmKs8zV/Hum6zGaTQhUtp/fFS2tMFqq4j5R0dyuqfiL==",
+      "chksum": "daff63b3c70207bda389e6269e1fec77ea038fb0"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}d0a8a87356028fe5afc08860913f4294",
+      "info": "{SRBX1}caLuDNuhxBSibSUtUqSbat7EnNFwzbPPFADD6sRu0Kri6OlzVw+Ga6brx0RTJZKwP5qjmlYX4tAZyOadMirV08n+tNbe5Yjdk03Vj2S31pwUnc8zbO1pge3a7mI8/PgCwMploEcmoJEyDX8oPfDggCUK2CFPnO/hkgekShyHHsA8zSkKCqu3jgZJhybn02u8QcXhFRNZ+w2=",
+      "chksum": "f07448aa050ef4cc34c611d16cc50ef09b20eca8"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}0696d106af26338019a0b971c650d2c6",
+      "info": "{SRBX1}0TSr8eadoRygg1dstNww2QnwmsXrhZTyi8MuRtyJ8z/XR/4ogFnLumo0M1ylDGMpKx2eq0phyZPAWXLjHvScYuvRopU04G4okyecfkOLPI1U5sm+rzVCGmg6lDkYQ+9FcI+OzopP7gppncS2Z0xZLOUjihqxeWwDweB9nrMZ9349WeIMPoy/2Xn2NDVaejyqbSBvyxwIuq+=",
+      "chksum": "523157a9914ccf6dcbf8c34c580f5d9144fd84c7"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}385077924784abfc85c1fe27b41255b9",
+      "info": "{SRBX1}fT/3zTdbrmgz9JgsKEjrftljeeVMQVR0Ecvit4pPcIp3m4wkJPYcYjJi0AZvewsxO3Nqm/woUc5ke1BElulE3JM3qF3f3VuRg9mRO8hyNs9Hbj73f+o1jyuxVOIXXahzcMH5GMmiLFpUKnK2iqeVC2F+XWrp962S6eCNE8Q6wvo/7U2qzqLIQ8+ysozGI5e9kjSw7hHNLu36lYte",
+      "chksum": "bb36a4d9d9c9c4eda1cea772efd644635df99d25"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}1c45c2dfef9cdbb52a4e0097b7f044fe",
+      "info": "{SRBX1}QTvtzZn+gQlkfT2M/mIzo2uz8nL89K/6qMpUne2YWd+E3oaqaMYBQd7a2LVJzmm3/noYCr3iMKJ+kjac9mW1dKUa6n5xdug8lrDqXabsKYUGZoM1ETZEe7Eym/LpRFRTGnOcC54Ki0qs3Ygt1+TOpGb2L6o//YnfxQiyTibB6aV3BqTYvn3XBUrtSnU9PvUjoVhOZqDy5XM49TWT",
+      "chksum": "530284feb1cabb60ce8d22b6faa472dc3fdc2f82"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}433b5b3a89d41d74382c72732de829aa",
+      "info": "{SRBX1}XXN6NEGGqPRjNiODklXfK5PTtyWYIiBDj076ltULvEsblELmC8KN7NVJMVf+jVz9rVSPr8W/VncLNANN/74tlvoEN8OGz3CxdaMexmblf7i7Fc/f6ZW0eFlB96/eYH09agUpS1kDw0/OCowvNaC9H5yZzuERgMQStz5bOsn4PJQyQoAN9WKgEuDsQNjX6BtmHbfn+oh51OKI18K1pOkN6S==",
+      "chksum": "acd82a023d70472805fb941eeeb2ec3e79055aa7"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}194b49283423499ef8b4127773bc4871",
+      "info": "{SRBX1}X21/HRF+X0k8KGE+0z3nZ1ov/QZSEq1tIUaQOw3suBNCRxYP6blytfQmWDi5D3qM4mXxV7dmbvJemPWJsMtXWUpV6mR8rX6StTJvnXlKTpOggD8btBF3MAJuYLUaIeHfZxBni6GuaUt3fnVMUeW12pzwbSEvRogWfBzJK9bzDgmmyc8ArwKhvfBcFDAamRSNi47NcWIBq03aMQvU3OKJ8L==",
+      "chksum": "cc68873cfc63e25dbc993fb8cf241498d0b2993b"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}af39882cdba2b8b98a3712743d826bb5",
+      "info": "{SRBX1}4Qyttq6kAIL9kTZKGUYIBaXZpIDysyDCh+h6yVRI3goHJnCM0gZb2xVc+xqwOF2MpUm7gfADrNIHUehlslPcdvP6l+vws+lYONgfgZMIrfFJmyWxWqeABqjOOMedZ27hSCijSAFVQNCJE4bCUS0/VYlCrVut8YUpsGI6I6hPm+XeNQVjYGx6tuznT8ibBbHpEPWytOeifgIqEVuWpUuhoYIba6v=",
+      "chksum": "e1afef27a78a92feb61ff6a7f45b412fcd55c6f1"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}9dfdc2657bdc5312a3db16b9024bbf5b",
+      "info": "{SRBX1}SHa3/bi4dNKPXQC/sRLuOGAcczFoU89p7qEhnZq/Gh23I+sNqfZ3Uxgm2BgBuiT9f9KP25faqT+SdzoJ6tJBbdfMp0G1xORP8wwENMhrzxy4FifYUsasIRM93azC58TJmXXQir6d7at0ZtQhIahWn0ZQ8mepIQAe2jYxth44H7hYTAGTZ2HGKNlqXdtZBowDakAcA4c3HTbEbrV4dLhX7Vkw3DZ=",
+      "chksum": "095af123d39767078461bf3732cdfac023918269"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}987ab55f630d2b8919680652f6fc0970",
+      "info": "{SRBX1}904MzWGe65BLw6fy0fxIjiOVLRBqJhCJCpGRPnZWyPx83KH6o7Fur/KwkAh/f92N57yra0d+RaxBfd0xwZbdpGbPKHKqkZiVqKB1q7fnq17RpVYJ19m4RUjuw71L1AvV09b+5AjDoxiuUsbx/GKZEkNrY2kU3qvpVVSviqAPOQHh6zUAU9GUUSdJb66P+K/Omb6uvKwHG1QZDSCD/D2RFLIKzRrVZGeA",
+      "chksum": "75db8ad5fc54c34007237cffc864e58c2a2d3fbf"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}063cc37d5cb70f0eea6d2a8c18476982",
+      "info": "{SRBX1}uurpnoT3qxpq/a+jgr/2dZX7zBHSoGdye2mC73w/AWagNaRi76b1zLwAhXQl9teNnuWnoYRrWt6CEWarkNbFcc9HY6cIAQDaDNYwPakzMlc8PryE8tUzjiW5tTSq8q5Jd7qGFPx8Yi1dFKXJNeEVEFICxxMpOpVisIBkTw9ZAKA1IQsjzrN+mmFWADiSsi3e/7wZOJqIenghoZLGR/8dlrGcc6/lRxcE",
+      "chksum": "2d971ddd77ff1e4c9da096b9c965085f0fc7035a"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}dae92d76213e303fcd6520591dcab08a",
+      "info": "{SRBX1}MYNHePzHUtvz8pCC1B7SUzCL/G6ie56MSBkDowplZWCuWuuVdxyvxEctH25RLU7GPdwTTNL2RlMPdX7V9Bta4rK9h4RlGth4rbb5fK857sSWAdjgkG+YZpJ5vpTWjKQKkCZXZcWNr091AsH/UVc9kjk8iJt96EwOdyi1TyIPPEwh6N7/XbkX4l6O/901/hJCQyjW0bRMBRgkNV05rPngyK7EGqnqH82EiJV1t+==",
+      "chksum": "dae44bafccd7ef4830b167e102dfb6aa986eb72f"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}e2e538256327d567507740a8d1388cd8",
+      "info": "{SRBX1}oaKGdqdw1yepzOadBvnkftvJpkdGpsdaSBN3cr3LkVyo8wxSzvVPs1c09PwROnTr7WQe0XcQF1sicOSFiLOesnglDHwCpVqizfxoLdFrgMV0PS6EVHyHfgjnTnpYCGLsOtqcdZiTbnl/sycJsr2+qqG/i1Cm2BD61z8t11duPnXq6MPGk0HMR1cXQcEuQzM834nnjKp1o3sylzIVhm8vwr9eTYM49vdsjykrov==",
+      "chksum": "b456c61fdf28a4a753f726304a6196cedd961212"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}81802166720ef90329f2f0fec5d8199b",
+      "info": "{SRBX1}CUOe+MkFJ/lBUCAROOqiZiA7QIA8KD63gJ0HiehDocp3K+bAu6KMe2BTkx/w0zgUnBSRR/zd/S1+wg/P5C+j7/WUi8DpQGr/Blcc7D0gxTppUUu0HQRDgR7GWd/Xix+43X8SJlxgRhyBqN5PQWO+BRtM3xfhECsAq/OTN+vQy+vyizFTqpY5imYYW0z4HFTkPdPm0gZXC8A7hp+s2Xi90v6NvT7kleemonjYmIYvjHY=",
+      "chksum": "7bb3ba403025e72b7c87470d48a493cec6ef9583"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}811d3d0db332170205523e62a61a5d1d",
+      "info": "{SRBX1}luMdV8BIQJFN/rmmYKBCJ2nNO628u0WFXVczWUGxL4YLE6/TKrWTc6U0SjfuiZiprJTDJvVBNJtlBAhLeMWRRJiYeLmbQ6pZ92cash1W2iHcfKCpPqv/ES6LcEvDGUmtC8B3rPahYlHDCE0bqg0H3GvhSqNZn1Hrnw0EmKtnVPJAyDxdyAsIi+fBkPpgb84uQGEBpHC7hNCnDQa4CPqLcbunnCB6gyaliyCB7+gOJNZ=",
+      "chksum": "b5db711ca6ea93a7e0efe71030468f235bdd23de"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}3928b8a2933bef990dcef0e71dfbc5f2",
+      "info": "{SRBX1}NB9n6/rE1IWTZw9NIofogGWrdAQNUDQs4QfoQlE+CsijsYZUrLZMEAh+p0tY+UyF3Jd5TONh8ScR+tfHnLeNhE7MLNMhwiuqS7NCUDF8e+IE6nmDjIPBrE3yEy/AH6+WNQZu4gtbyAlX4EsCryrSK4KmcTw4rwTosfIBCGJ4i/CO+51LHhcrmArN4e8BGjgBCpAdTMK6oCz4fGVtlIXqJSEFyowbhV72lM2u+RY1tqIIZ6/M",
+      "chksum": "30d8c1bb90e82436d5ed6d6379ed081d883a3e54"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}78ded1c672ae677072a58425e9d9378e",
+      "info": "{SRBX1}kCppRqXUwL1CIeddaxbmLdDMR3dfpmUgr+attqu8fiHqeyNlIi9yhGikUEVJ/+G0jl374pg3al48PLQnhYTlDCH+kx6r2LcpUNRoXCgXmwveXkmVWb4T74Q18X0DnqyNZlqWCQgqiZg4YlNaOU+Tq0Jc5JfjW03wsjdCjfSwnvMFnQt3egxN4h7iw2xHA25694BZT4YSuNxtxTeuKuAaYAMf1VtiRWKdRroOTKA3WmlLdeGy",
+      "chksum": "057cf324617ded9a6045409a316e7f2c8e638f4f"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}b26d7e00b6b83765bc9867fc35ca4ea4",
+      "info": "{SRBX1}/cj8eu5JJrf3a//DAAHD5XeDxj9kK/H5rzS+ipDr8xVPhBLl4xYXoFDPrn0MrFJCpMfL0vRx3l+VF1wAMyoHM84scSD3NbYosv5YfNS1x5Bss8hzhWIMihTZFglwofygTMMSsHFIhZHcDeLUaoSBknJFlSZtZoiTLcxY5m3Jh7ZkoVIdyJpAjt9OCIAyyV2uipregV1++dr9LiyHzh4caTanmD1IgaCizmQ0R1+ZYJWUXZDHRYMcRv==",
+      "chksum": "011139fdfbba2b58e6405ace9ab8c8a50d684714"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}2462dd3fa0cc2281563daaea5e59aa7b",
+      "info": "{SRBX1}P5CjyOQVnZp3SVhDbQgWd+AabGJVVIUPznegWXAgBuAUkB+EZ+/2QTEO5YnAH0hT+S0aBPkQA/+P2rsRui5PlhbcyYA1aCQnG+zEZnlamFBR3+dFGw/TiG9Kj6ZBprSMfF9RUehyY6LOWDKChJTT/tz6pR5FC8eG7sxi4wPMeGrpcN9EfoTrp5vTjTas0GkSmD9ZLxw2sdiPGnKzG5194tEqtofkESJnk5AOzCt8qFRuuU4kYxfluv==",
+      "chksum": "0c6ac682ecc50d185178fa9d31ca59bda94b29d5"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}7f5df26852ff8cf4926fc1485d04be84",
+      "info": "{SRBX1}7FX3IkVUA2afeOhXqPfRCagOt6Lq6L1jcO7dsXtcvnVJvzmUxVg7PpPCEV56dPG6xM46cX3ehIOaBszkej3DgLbU/Z1RhwBlnfsm79fu2NBDdE90rWqq+IFnjwSW7OUnMGFN1whlHaZNSrntlJoOsGbHTT4mLWH7dxcmEAiRJ8DME1wE+oTatcQ++Nc/T+vzTBlkusEJ9jPxJ5Yp+hgFVYHPL/dpJ+7xhk7+QcCIzTYpCm7WMSz/XrzmGYD=",
+      "chksum": "b5645d344bc7ea1e250d15d22e1814db41becdad"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}515344c1fd16e8bcfdaaa3225193d84b",
+      "info": "{SRBX1}rSWXcotPIP/WU4tHejbjenet7DS26q+1AYj6k7ZnRQ8MZL+7NOyprXrcEFAXispLk1VSBfGrqsSyDPn3Gc2/OwpOeHN1a2vLQCFPFT6zGjF3n6oqnRZ9P5R89Za/BhtCSHcqO2xpXZV+jnPtHYY/Sm0dzrU9KuLf+CLpvQy0Jjiyzhqw0ASEkbhE3+1NjQcBLB4JgkpFwbFMTpZILPV/wKh+v9OgHnAZbide5tx6xKIhNnZea/QxZ0m45eL=",
+      "chksum": "9e3ecbf0a68067a6ced5817baa959d706b5005cd"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}fea66ad8b90906b0ba5060728fcf76db",
+      "info": "{SRBX1}j8PvoSScCdIil4Bsi9Dd9kMTG/j0PKzMEnMvN22Eu5cDkio4iSZVodlMGTij97Tax/QecNBBHNsmJzVN6516af56Jkf7MG6iqB989kiphc5tvunK3Kqs1jIIhagTJ3co8hwZXFK9XIiwYe0ObKInAxLFh3acouszJC8COmk4QzNLkM0fX988PEVFV9Cj8fWiS2no8kiVKbd3F9VUN3UkthUQnd7oL5bKzowZJN+gFDDaRH+2qn/K7yoFSymwIx16",
+      "chksum": "4ac4887e4183067782623848db8d4d4aa4298baf"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}103ab9c6c7e756a1ebde24f7814e524f",
+      "info": "{SRBX1}e8UXdHF0zT1dKDiigr944fQaHMq5f8ecuDmmnbQIrymhHNlkD52SuQRW0R532NFsqmkShdgEKIrV9VCdpDg06hcKZrYOAFvOtJevoHXzXjoxRjaGLQZCPjSlZcOMLKUda/yKc0Yiyh0AuRaAUqEqasaFBSwyf7iRRjYKloNWnmsDPj94tLbOjy5BuizRvxG+I+VYiESpjHcSaRSUgSORb8DFwogsASfQ+TfUzCtTn1F7bg6sxMb1tYlYGxxk0MKC",
+      "chksum": "12ffc9f2f62f520403d0bbafe1e2032977831b4d"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}7bec5ced3a1d89451674069be8988440",
+      "info": "{SRBX1}6V7csvPZEeKd0OTwxoAnqLNnsiWdIXyt4xELyDxO28fKHcU8hQrn2u0x5IJAgBg2RL7j7Ryk6wOjHtBqKnrgUGDLPgAvBNFTnhsL6gSmWtPIuAKsgxzcaLaDrr3BR1xivhZOtlCKfgswBCA/0dS/RG/fQLYus9HmZooaldbstZ7jVeJ4wlxywJjfsZXuyHtFC/JKb69JOWBB+VEu7N2Et2/EC9LD9vkeEd23J13Mk16ZrlCLnEvRvO+ywzVt6Sb3wKZz6+==",
+      "chksum": "1793c6be4a4fe44533f0fe746a80d1cd334f97e8"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}6924d389f06fcc3dc36f32fbb04fa30e",
+      "info": "{SRBX1}WmiiMIMeoiftlc7YyGHBevKFanD/zPUbD829XwrcUd2QlgEW2ZG0lpy3+DZH9acax0fY42nH6R1aenLzF0rhQskEBAQXyJRf+akglciLJAWV6lmblfithx2u9uo5IARrq3vG3oR+4ftRzzLjxG7113UIRmIo37YRksO/W+5bZLFjGjNzqm3FbehSOUxUcVkzBERhpoVwYb1+oGG6rX1Z6bsP44jMRYy1eKR/JlJ6A6JcMvjMlbxo6yN/KssnVy0oCazPev==",
+      "chksum": "17a1b7944861ee4c141d3b2c976f5b65d920b605"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}3a5a8ccf421e070f4001378c97723f7a",
+      "info": "{SRBX1}QtUbuQn1cZfvpYgri+DWtYDr78Vwm8pA8bS16WVuCyLCbrVXRARXd6/OPv8eHbvQ3beJOAoKgl1wR0fTeysyJREJvpwW1t31YsZFR0333p+hJFyzYff3uQ3sxrH8EfB4yoQurz9I+3C8mOSsfSjxP/k+MKWa12ySizLY76hVCbqok1xEhfMLCZpId/wBKcAVFG/PqmSD5Ew8LvXpZy2GSxC8GtDADSKwUKBWPA+m07Zl+An5jwHxzbEnuu4isXrxLaFLy6OnVRb=",
+      "chksum": "c9e811e2110f53aef5f19251e365696cd38d968e"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}83f805592d8c7537914085d9b7a79a43",
+      "info": "{SRBX1}tn4cKsG+KHR+hv4jHOmfDe0gxDi3Z/FBtXPa75F1slg5aavy8S8i6JfcG/csmTptNXRtupjzJxVCwMKioxBJ824LvNsnBGPwm0B7fZ1gcQw7Z8ft2KGgpkyoZYxKBtkaBJjwIfdCZ2MIqe6iRbihDTHXAlGGxoov1p+djaGOh7f/VuGOH4NgQ8Q5VNWR8BygMPfrYUQUw+SUcrRtWqN9+Cfbrsl36wqCvp1H03yoPbm36miXRQ8nm5ii/GPZFKM/fxQxMswdiND=",
+      "chksum": "2d20fc774fc57dde217b8921c74737b8e3fd773d"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}7af2f9d671a4b16c396acb7cbbe02a34",
+      "info": "{SRBX1}YXGOmOReiP8Cx2+RtKO/KmgBV5hGVnTEPW9G0dTSt/KWLzrfwyoBgYvf/dfPBHCgdpV3k2sSRhn4k/yzxo/eHKn2FxUrfN7iLwFIdYcdl/cpqaT/XQWsTDi0c3+M4n7Npp+CTNetvDTUclg5sIIvgZzS1R1X2xeC3kQuJwebRsslkjbtVq80dR0y2n3DZ6x8B8SSu4AiSCLXM4jlwFadLFODQU7OUiJwE7LqBV8Ub4MOK+xUcQ/LflKfY7B7k9GdRwMHAXCnowvYE15q",
+      "chksum": "6f3adc90436d634c99ec650b9255153ba51a04a3"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}a86d1bb41ee9ca07947c66149656a4c7",
+      "info": "{SRBX1}vkdLrNgAOKbPe5fGvNZDGeGCJfilsUcGg5L65/6i581UYgetFHQojMT0Yw+QHHXxTqIM7L8y+xif/bDAWNfcxgqLDBhKr/4tXuVZzAkH3F0HQTm1ycIyRjz08neIVF2YJvA6P7W7xmKsYzSrhqHu8TCCm/u1m+dcS0euy94WD4/BCSs5MWqOL6d4sqyGdY3RkIe6V+fgbLIMtLGTMe1yETy5+htdZUkNmm5v45TfKtbJlM0FIqC9S5KkuOOXCNxgOAjtYgH+KyfkEtoj",
+      "chksum": "cbc0e5a625379ce2740e5e2d59a345e77de62bc1"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}e7e9c58d5137f3596da2b5e114fa01f3",
+      "info": "{SRBX1}TFfOKNCfrssKT1S+K+Q15EXWhGbiztF6JmBDt6yiHOGqlyH1T3pLvWfpKIL7fsYKy6wQhRenOBX6iwrgGI39855m78jVKT+2o32CpMLqO/ZxEyCLPClqkoDBonNNCcPOEWVj4tppPsjk0dWJq43BoODSAoyaCXtoQ94yOd2I0zmM1ljjs+tdQZ3OedBaWQjvjHoN+wDr7TC0MzGNOsmErjff4jEZbtHysDIVOaqj2VWBZG9lqBU/xSZDrd3W8pPLVDKflDa6M8KhPqfhXQh0Qv==",
+      "chksum": "191f9df7c31a7fa5576a645b2274a5659a0062f1"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}862a93fd58d7d7daaca4e0e6d4dee6dc",
+      "info": "{SRBX1}p53qiAL6nSIT1RSgs50hkH2Cn/o4y7dyFmjPrYqCGly045ydfEW7LWINceL5gDVHlzRAZWYcxnQz4/W/WXyDx9haCMoUvZVdTGZUhYExM1qcLF/hQa4sfHxY05KaRG590AQWyWGmKrk+mRFYGetTxSaCwlGjY6KfyeoLjLJGromPiD6pF4f8koKM70sHorgGLArQo+pjIApzTdJ6QOfoYuwJmzoZJqpa8iFR69LLSaYsaZ3ygX5q5JA1BkLhyl1raiSiISmYVhuObi0324hhyL==",
+      "chksum": "5260262aacb07fac4f6d583f660942e3d269f586"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}61a50a2c61ee1b50ab03b75e36c09ca2",
+      "info": "{SRBX1}ajQWCRfA1UfTo1c/BP33JY43GEnrXyybINRCMgb+ZRa0n8Ch7KSY2WiHU0nrZFf1Ec3ycnSOJnJhGvhYbw+/CXeU2sI+miiFxmehPKeJiGtWzEXYXyS1nuXDa8RcFoQygtli43R3AYCLgr4NKGgzcYckcpoq5xo2OkiDXGH7qF0UMgg9KiVNr5kZm4z2G9+5l54ZgaACsKd8Or7bBknFAVRZbnPSw08ZdPm6k8qXlzyL9rktr6PUrlRh4qqLOnoKfV34Y4Helh9xLmk3VGF+oQenZ8L=",
+      "chksum": "6d316439fc064c9e4811f013ecdcb879058d6d2f"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}52cb2b6a05b7e3ca342c00e243804595",
+      "info": "{SRBX1}yO2Lyxuz5WS1hnPrlnErutA06pWvo3EwK9bgEkHJ8vdwHLFrnzk0H6Q0rA9oE9swW9NezJWX3m5vy6MLn53uK1Uo2Z9BL4seS9/gDsLzFnpOrEBwWcndyj2pIcqCxdcrLLvsQQg8FR2w19xuIkOTDV01EfLo1eXezUWD4AO5l53O0CfWJroCsGaCIwbNyw9pf7oGepKIVmKdlsg5chK3JHsYTVV8Cp0rrIeLsyFAbZiLOog2aQcQW/rPlF8iimxmvhmWbBnke8Mmp8+nyEyseHwzYkP=",
+      "chksum": "c1d4d44828c0bcba3c255f7f655141d49a92d051"
+    }
+  },
+  {
+    "inputs": {
+      "username": "uxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp",
+      "ip": "192.0.2.10",
+      "ac_id": "21",
+      "token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "expected": {
+      "password": "{MD5}1edc4b78a538977056f3e57bb88d36ee",
+      "info": "{SRBX1}dDB+04/heWS0M8KWWCKBNauc7xhaYxyPX6Qluw9eIO1n7HW93WcBpanvMcKUAOh+XFRQ519CLpjtX8mW8z5ty77XjRydBnY7L7tuiXfOLuUU7xPm/iCZI+QL6Nq5YbbeilQbvCBNXyPFtRNWIhwhQX4arbhwmf7epkujbQVZlmfb6329poMT4VidqdkrEzK7izS8nqmSxK4SlIVWupccdyED0KUR31tBrs1EWm3dL1IXn2mqNLylGzztewVCwfaMzODcSE8lZ6vdgdGsoG1PMIs/1xZzpSEc",
+      "chksum": "1a99e57a55f71331c5ce9a3151aa0e34ea15cb41"
+    }
+  },
+  {
+    "inputs": {
+      "username": "student",
+      "password": "demo-password",
+      "ip": "192.0.2.10",
+      "ac_id": "1",
+      "token": "abcd"
+    },
+    "expected": {
+      "password": "{MD5}8e25c5a6dd4e08e2db06f562292566d1",
+      "info": "{SRBX1}RvHUE4aJ8ZaM5T21bgct6P+oFKBMrkfggJrdnn7ouEqEGc0Pt1Yn2TauQbTJsJA7JRrvzx+pLecnaNBaIPGAnAkGMNckJk2/62FUcXmu+jxVkn3XIBViNcf04FfAtyv1ls2+h4JpJrt=",
+      "chksum": "98049ab5c3335eb4c943c896b2384d16c909b56e"
+    }
+  }
+]
